@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - DysCover Nexus</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .about-hero {
+            text-align: center;
+            padding: 6rem 0 3rem;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        .benefits-section {
+            padding: 4rem 0;
+        }
+        .benefit-card {
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        .concept-image {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <i class="fa-solid fa-gamepad"></i> <span>DYSCOVER</span> NEXUS
+            </a>
+            <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+            <nav class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="about.html" style="color: var(--primary);">About Game</a>
+                <a href="product.html">Store</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary">Login</a>
+                <a href="cart.html" class="btn btn-secondary"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-hero container">
+            <h1 class="gradient-text">Redefining Math Education</h1>
+            <p style="max-width: 800px; margin: 1.5rem auto; color: var(--text-muted); font-size: 1.2rem;">DysCover Nexus isn't just a game. It's a revolutionary cognitive tool built on neuroscientific principles to help children with dyscalculia visualize numbers and grasp mathematical concepts through spatial reasoning in a 3D environment.</p>
+        </section>
+
+        <section class="container section-padding">
+            <div class="grid-2" style="align-items: center;">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop" alt="Game Concept" class="concept-image glass-panel">
+                </div>
+                <div>
+                    <h2 class="gradient-text" style="margin-bottom: 1.5rem;">How It Works</h2>
+                    <p style="margin-bottom: 1rem;">Traditional math relies heavily on abstract symbols. DysCover Nexus translates these abstract numbers into physical, manipulatable 3D objects.</p>
+                    <p style="margin-bottom: 1.5rem;">Players solve environmental puzzles by physically combining or dividing these objects, bridging the gap between quantity perception and symbolic math.</p>
+                    <ul style="line-height: 2;">
+                        <li><i class="fa-solid fa-brain" style="color:var(--primary); width:25px;"></i> Neuroplasticity focused mechanics</li>
+                        <li><i class="fa-solid fa-eye" style="color:var(--primary); width:25px;"></i> Multi-sensory learning approach</li>
+                        <li><i class="fa-solid fa-chart-line" style="color:var(--primary); width:25px;"></i> Real-time cognitive load balancing</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section container">
+            <h2 class="text-center gradient-text" style="margin-bottom: 3rem;">Learning Advantages</h2>
+            <div class="grid-3">
+                <div class="glass-panel benefit-card">
+                    <i class="fa-solid fa-cubes feature-icon"></i>
+                    <h3>Spatial Reasoning</h3>
+                    <p style="color: var(--text-muted); margin-top: 1rem;">Develops the ability to visualize quantities in 3-dimensional space.</p>
+                </div>
+                <div class="glass-panel benefit-card">
+                    <i class="fa-solid fa-shield-heart feature-icon"></i>
+                    <h3>Zero Math Anxiety</h3>
+                    <p style="color: var(--text-muted); margin-top: 1rem;">Removes the stress of testing by integrating assessment seamlessly into gameplay.</p>
+                </div>
+                <div class="glass-panel benefit-card">
+                    <i class="fa-solid fa-bolt feature-icon"></i>
+                    <h3>Immediate Feedback</h3>
+                    <p style="color: var(--text-muted); margin-top: 1rem;">Visual and auditory cues provide instant, non-punitive correction.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="logo" style="justify-content: center;">
+                <i class="fa-solid fa-gamepad"></i> <span>DYSCOVER</span> NEXUS
+            </div>
+            <p style="color: var(--text-muted);">&copy; 2026 DysCover Nexus. Academic Project.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

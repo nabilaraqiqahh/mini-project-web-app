@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - DysCover Nexus</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .product-hero {
+            padding: 4rem 0;
+        }
+        .product-gallery img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+        }
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 1.5rem 0;
+            font-family: var(--font-heading);
+        }
+        .rating {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .rec-card img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+        }
+        .rec-card-body {
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <i class="fa-solid fa-gamepad"></i> <span>DYSCOVER</span> NEXUS
+            </a>
+            <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+            <nav class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About Game</a>
+                <a href="product.html" style="color: var(--primary);">Store</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary">Login</a>
+                <a href="cart.html" class="btn btn-secondary"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="product-hero grid-2">
+            <div class="product-gallery">
+                <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=2070&auto=format&fit=crop" alt="DysCover Nexus Gameplay">
+            </div>
+            <div class="product-details glass-panel" style="padding: 3rem;">
+                <h1 class="gradient-text">DysCover Nexus: Core Edition</h1>
+                
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <span style="color: var(--text-muted); font-size: 0.9rem; margin-left: 0.5rem;">(1,284 reviews)</span>
+                </div>
+
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">Experience the definitive educational journey. The Core Edition includes chapters 1 through 5, covering basic arithmetic, spatial geometry, and introductory fractions wrapped in a thrilling sci-fi narrative.</p>
+                
+                <ul style="color: #fff; margin-bottom: 2rem; padding-left: 1rem;">
+                    <li>PC / Mac / Linux compatible</li>
+                    <li>Parental dashboard access</li>
+                    <li>Offline mode available</li>
+                </ul>
+
+                <div class="price-tag">$29.99</div>
+                
+                <div style="display: flex; gap: 1rem;">
+                    <button class="btn btn-primary" onclick="window.location.href='cart.html'" style="flex: 1;"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                    <button class="btn btn-secondary"><i class="fa-regular fa-heart"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <h2 class="gradient-text" style="margin-bottom: 2rem;">Recommended Expansions</h2>
+            <div class="grid-3">
+                <div class="glass-panel rec-card">
+                    <img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?q=80&w=1974&auto=format&fit=crop" alt="Expansion 1">
+                    <div class="rec-card-body">
+                        <h3>Algebraic Awakening DLC</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0;">Introduce variables through portal mechanics.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                            <span style="font-weight: bold; color: var(--primary);">$14.99</span>
+                            <a href="cart.html" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Add</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-panel rec-card">
+                    <img src="https://images.unsplash.com/photo-1614680376573-3e4e1ef4142a?q=80&w=1974&auto=format&fit=crop" alt="Expansion 2">
+                    <div class="rec-card-body">
+                        <h3>Fractions Frontier DLC</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0;">Master parts-of-a-whole in zero gravity.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                            <span style="font-weight: bold; color: var(--primary);">$9.99</span>
+                            <a href="cart.html" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Add</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-panel rec-card">
+                    <img src="https://images.unsplash.com/photo-1627856013091-fed6e4e0220be?q=80&w=2070&auto=format&fit=crop" alt="Bundle">
+                    <div class="rec-card-body">
+                        <h3>Nexus Season Pass</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0;">Get all current and future expansions.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                            <span style="font-weight: bold; color: var(--primary);">$39.99</span>
+                            <a href="cart.html" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Add</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p style="color: var(--text-muted);">&copy; 2026 DysCover Nexus.</p>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+</html>
