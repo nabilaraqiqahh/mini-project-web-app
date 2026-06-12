@@ -28,12 +28,45 @@
             font-size: 1.2rem;
             margin-bottom: 1rem;
         }
+        
+        /* ==========================================================================
+           Member 4 Final Fixes: Force Equal 3-Column Grid Layout
+           ========================================================================== */
+        
+        /* Forces the container to stay in 3 perfectly equal rows side-by-side */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr) !important; 
+            gap: 2rem;
+            align-items: stretch; /* Makes all card boxes the exact same height */
+        }
+        
+        /* Keeps the image content clean and square inside the cards */
+        .rec-card {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            height: 100%;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+        }
+        
+        /* Fixes the layout shrinking and stretching for all 3 images */
         .rec-card img {
             width: 100%;
-            border-radius: 8px 8px 0 0;
+            height: 250px;             /* Enforces a matching fixed height */
+            object-fit: cover;         /* Crops images neatly without stretching */
+            object-position: center;
+            border-radius: 16px 16px 0 0;
         }
+        
         .rec-card-body {
             padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
         }
     </style>
 </head>
@@ -82,7 +115,7 @@
                     <li>Offline mode available</li>
                 </ul>
 
-                <div class="price-tag">$29.99</div>
+                <div class="price-tag">RM 129.00</div>
                 
                 <div style="display: flex; gap: 1rem;">
                     <button class="btn btn-primary" onclick="window.location.href='cart.html'" style="flex: 1;"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
@@ -94,39 +127,43 @@
         <section class="section-padding">
             <h2 class="gradient-text" style="margin-bottom: 2rem;">Recommended Expansions</h2>
             <div class="grid-3">
+                
                 <div class="glass-panel rec-card">
                     <img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?q=80&w=1974&auto=format&fit=crop" alt="Expansion 1">
                     <div class="rec-card-body">
                         <h3>Algebraic Awakening DLC</h3>
                         <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0;">Introduce variables through portal mechanics.</p>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                            <span style="font-weight: bold; color: var(--primary);">$14.99</span>
+                            <span style="font-weight: bold; color: var(--primary);">RM 49.00</span>
                             <a href="cart.html" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Add</a>
                         </div>
                     </div>
                 </div>
+
                 <div class="glass-panel rec-card">
-                    <img src="https://images.unsplash.com/photo-1614680376573-3e4e1ef4142a?q=80&w=1974&auto=format&fit=crop" alt="Expansion 2">
+                    <img src="../images/expansion2.png" alt="Expansion 2">
                     <div class="rec-card-body">
                         <h3>Fractions Frontier DLC</h3>
                         <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0;">Master parts-of-a-whole in zero gravity.</p>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                            <span style="font-weight: bold; color: var(--primary);">$9.99</span>
+                            <span style="font-weight: bold; color: var(--primary);">RM 29.00</span>
                             <a href="cart.html" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Add</a>
                         </div>
                     </div>
                 </div>
+
                 <div class="glass-panel rec-card">
-                    <img src="https://images.unsplash.com/photo-1627856013091-fed6e4e0220be?q=80&w=2070&auto=format&fit=crop" alt="Bundle">
+                    <img src="../images/nexus-season-pass.jpg" alt="Bundle">
                     <div class="rec-card-body">
                         <h3>Nexus Season Pass</h3>
                         <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0;">Get all current and future expansions.</p>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                            <span style="font-weight: bold; color: var(--primary);">$39.99</span>
+                            <span style="font-weight: bold; color: var(--primary);">RM 159.00</span>
                             <a href="cart.html" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Add</a>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
     </main>
