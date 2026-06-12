@@ -66,10 +66,8 @@
 
     <main class="container">
         <div class="checkout-container">
-            <!-- Checkout Form -->
             <div class="glass-panel checkout-form">
                 <form action="confirmation.html" method="GET">
-                    <!-- Billing Info -->
                     <div class="form-section">
                         <h3>1. Billing Information</h3>
                         <div class="grid-2">
@@ -102,7 +100,6 @@
                         </div>
                     </div>
 
-                    <!-- Payment Info -->
                     <div class="form-section">
                         <h3>2. Payment Method</h3>
                         <div class="payment-methods">
@@ -140,38 +137,39 @@
                 </form>
             </div>
 
-            <!-- Order Summary (Sidebar) -->
             <div class="glass-panel" style="padding: 2rem; height: fit-content;">
                 <h3 style="margin-bottom: 2rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 1rem;">Order Summary</h3>
+                
                 <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: center;">
                     <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=2070&auto=format&fit=crop" style="width: 60px; border-radius: 4px;" alt="Core Edition">
                     <div>
                         <div style="font-weight: bold;">DysCover Nexus: Core</div>
                         <div style="color: var(--text-muted); font-size: 0.9rem;">Qty: 1</div>
                     </div>
-                    <div style="margin-left: auto;">$29.99</div>
+                    <div style="margin-left: auto; font-weight: 500;">RM 129.00</div>
                 </div>
+
                 <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: center;">
                     <img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?q=80&w=1974&auto=format&fit=crop" style="width: 60px; border-radius: 4px;" alt="DLC">
                     <div>
                         <div style="font-weight: bold;">Algebraic Awakening</div>
                         <div style="color: var(--text-muted); font-size: 0.9rem;">Qty: 1</div>
                     </div>
-                    <div style="margin-left: auto;">$14.99</div>
+                    <div style="margin-left: auto; font-weight: 500;">RM 49.00</div>
                 </div>
                 
                 <div style="border-top: 1px solid var(--glass-border); padding-top: 1.5rem; margin-top: 1.5rem;">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: var(--text-muted);">
                         <span>Subtotal</span>
-                        <span>$44.98</span>
+                        <span>RM 178.00</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: var(--text-muted);">
-                        <span>Tax</span>
-                        <span>$3.60</span>
+                        <span>Tax (8%)</span>
+                        <span>RM 14.24</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 1.2rem; font-weight: bold; color: var(--primary);">
                         <span>Total</span>
-                        <span>$48.58</span>
+                        <span>RM 192.24</span>
                     </div>
                 </div>
             </div>
@@ -179,7 +177,7 @@
     </main>
 
     <script>
-        // Simple UI interaction for payment methods
+        // Simple UI interaction for payment methods selection
         document.querySelectorAll('.payment-card').forEach(card => {
             card.addEventListener('click', function() {
                 document.querySelectorAll('.payment-card').forEach(c => c.classList.remove('active'));

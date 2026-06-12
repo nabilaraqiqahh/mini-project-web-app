@@ -74,6 +74,12 @@
             font-weight: bold;
             color: #fff;
         }
+        .empty-msg {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-muted);
+            font-family: var(--font-heading);
+        }
         @media (max-width: 992px) {
             .cart-container { grid-template-columns: 1fr; }
         }
@@ -100,49 +106,18 @@
     <main class="container">
         <h2 class="gradient-text" style="margin-top: 3rem;">Your Nexus Cart</h2>
         <div class="cart-container">
-            <!-- Cart Items -->
-            <div class="glass-panel cart-items">
-                <div class="cart-item">
-                    <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=2070&auto=format&fit=crop" alt="Core Edition">
-                    <div class="item-details">
-                        <h3>DysCover Nexus: Core Edition</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Digital Download - PC/Mac</p>
-                    </div>
-                    <div class="quantity-control">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                    <div class="item-price">$29.99</div>
-                    <button class="btn" style="padding: 0.5rem; color: #ff3366;"><i class="fa-solid fa-trash"></i></button>
+            <div class="glass-panel cart-items" id="cartItemsList">
                 </div>
-                
-                <div class="cart-item">
-                    <img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?q=80&w=1974&auto=format&fit=crop" alt="Algebraic Awakening">
-                    <div class="item-details">
-                        <h3>Algebraic Awakening DLC</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Digital Download - PC/Mac</p>
-                    </div>
-                    <div class="quantity-control">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                    <div class="item-price">$14.99</div>
-                    <button class="btn" style="padding: 0.5rem; color: #ff3366;"><i class="fa-solid fa-trash"></i></button>
-                </div>
-            </div>
 
-            <!-- Order Summary -->
             <div class="glass-panel cart-summary">
                 <h3 style="margin-bottom: 2rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 1rem;">Order Summary</h3>
                 <div class="summary-row">
                     <span>Subtotal</span>
-                    <span>$44.98</span>
+                    <span id="subtotalVal">RM 0.00</span>
                 </div>
                 <div class="summary-row">
-                    <span>Estimated Tax</span>
-                    <span>$3.60</span>
+                    <span>Estimated Tax (8%)</span>
+                    <span id="taxVal">RM 0.00</span>
                 </div>
                 <div class="summary-row">
                     <span>Digital Delivery</span>
@@ -154,13 +129,89 @@
                 </div>
                 <div class="summary-total">
                     <span>Total</span>
-                    <span style="color: var(--primary);">$48.58</span>
+                    <span style="color: var(--primary);" id="totalVal">RM 0.00</span>
                 </div>
                 <a href="checkout.html" class="btn btn-primary" style="width: 100%; margin-top: 2rem; text-align: center;">Secure Checkout <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </main>
 
-    <script src="../js/main.js"></script>
+    <footer>
+        <div class="container footer-content">
+            <p style="color: var(--text-muted);">&copy; 2026 DysCover Nexus.</p>
+        </div>
+    </footer>
+
+    <script>
+        function renderCart() {
+            const listContainer = document.getElementById('cartItemsList');
+            let cart = JSON.parse(localStorage.getItem('nexus_cart')) || [];
+            
+            if (cart.length === 0) {
+                listContainer.innerHTML = `<div class="empty-msg"><h3>Your cart is empty</h3><p style='margin-top:1rem;'>Browse our expansions page to load contents.</p></div>`;
+                updateSummary(0);
+                return;
+            }
+
+            listContainer.innerHTML = '';
+            let subtotal = 0;
+
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+
+                const itemRow = document.createElement('div');
+                itemRow.className = 'cart-item';
+                itemRow.innerHTML = `
+                    <img src="${item.img}" alt="${item.name}">
+                    <div class="item-details">
+                        <h3>${item.name}</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Digital Download - PC/Mac</p>
+                    </div>
+                    <div class="quantity-control">
+                        <button onclick="changeQty(${index}, -1)">-</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="changeQty(${index}, 1)">+</button>
+                    </div>
+                    <div class="item-price">RM ${itemTotal.toFixed(2)}</div>
+                    <button class="btn" onclick="removeItem(${index})" style="padding: 0.5rem; color: #ff3366;"><i class="fa-solid fa-trash"></i></button>
+                `;
+                listContainer.appendChild(itemRow);
+            });
+
+            updateSummary(subtotal);
+        }
+
+        function changeQty(index, amount) {
+            let cart = JSON.parse(localStorage.getItem('nexus_cart')) || [];
+            cart[index].quantity += amount;
+            
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            
+            localStorage.setItem('nexus_cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem('nexus_cart')) || [];
+            cart.splice(index, 1); // Deletes selection directly out of array
+            localStorage.setItem('nexus_cart', JSON.stringify(cart));
+            renderCart(); // Reload UI instantaneously
+        }
+
+        function updateSummary(subtotal) {
+            const tax = subtotal * 0.08;
+            const total = subtotal + tax;
+
+            document.getElementById('subtotalVal').innerText = `RM ${subtotal.toFixed(2)}`;
+            document.getElementById('taxVal').innerText = `RM ${tax.toFixed(2)}`;
+            document.getElementById('totalVal').innerText = `RM ${total.toFixed(2)}`;
+        }
+
+        // Initialize display upon file read
+        document.addEventListener('DOMContentLoaded', renderCart);
+    </script>
 </body>
 </html>
