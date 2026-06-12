@@ -32,16 +32,12 @@
         /* ==========================================================================
            Member 4 Final Fixes: Force Equal 3-Column Grid Layout
            ========================================================================== */
-        
-        /* Forces the container to stay in 3 perfectly equal rows side-by-side */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr) !important; 
             gap: 2rem;
-            align-items: stretch; /* Makes all card boxes the exact same height */
+            align-items: stretch;
         }
-        
-        /* Keeps the image content clean and square inside the cards */
         .rec-card {
             display: flex;
             flex-direction: column;
@@ -51,22 +47,35 @@
             border: 1px solid var(--glass-border);
             border-radius: 16px;
         }
-        
-        /* Fixes the layout shrinking and stretching for all 3 images */
         .rec-card img {
             width: 100%;
-            height: 250px;             /* Enforces a matching fixed height */
-            object-fit: cover;         /* Crops images neatly without stretching */
+            height: 250px;
+            object-fit: cover;
             object-position: center;
             border-radius: 16px 16px 0 0;
         }
-        
         .rec-card-body {
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             flex-grow: 1;
+        }
+        /* Notification toast style */
+        .toast-notif {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(5, 5, 7, 0.9);
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            z-index: 1000;
+            display: none;
         }
     </style>
 </head>
@@ -91,7 +100,7 @@
     </header>
 
     <main class="container">
-        <section class="product-hero grid-2">
+        <section class="product-hero grid-2" data-id="core_edition" data-name="DysCover Nexus: Core Edition" data-price="129.00" data-img="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=2070&auto=format&fit=crop">
             <div class="product-gallery">
                 <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=2070&auto=format&fit=crop" alt="DysCover Nexus Gameplay">
             </div>
@@ -118,7 +127,7 @@
                 <div class="price-tag">RM 129.00</div>
                 
                 <div style="display: flex; gap: 1rem;">
-                    <button class="btn btn-primary" onclick="window.location.href='cart.html'" style="flex: 1;"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                    <button class="btn btn-primary add-to-cart-btn" style="flex: 1;"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
                     <button class="btn btn-secondary"><i class="fa-regular fa-heart"></i></button>
                 </div>
             </div>
@@ -128,38 +137,38 @@
             <h2 class="gradient-text" style="margin-bottom: 2rem;">Recommended Expansions</h2>
             <div class="grid-3">
                 
-                <div class="glass-panel rec-card">
+                <div class="glass-panel rec-card" data-id="dlc_algebraic" data-name="Algebraic Awakening DLC" data-price="49.00" data-img="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?q=80&w=1974&auto=format&fit=crop">
                     <img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?q=80&w=1974&auto=format&fit=crop" alt="Expansion 1">
                     <div class="rec-card-body">
                         <h3>Algebraic Awakening DLC</h3>
                         <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0;">Introduce variables through portal mechanics.</p>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
                             <span style="font-weight: bold; color: var(--primary);">RM 49.00</span>
-                            <a href="cart.html" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Add</a>
+                            <button class="btn btn-secondary add-to-cart-btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Add</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="glass-panel rec-card">
+                <div class="glass-panel rec-card" data-id="dlc_fractions" data-name="Fractions Frontier DLC" data-price="29.00" data-img="../images/expansion2.png">
                     <img src="../images/expansion2.png" alt="Expansion 2">
                     <div class="rec-card-body">
                         <h3>Fractions Frontier DLC</h3>
                         <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0;">Master parts-of-a-whole in zero gravity.</p>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
                             <span style="font-weight: bold; color: var(--primary);">RM 29.00</span>
-                            <a href="cart.html" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Add</a>
+                            <button class="btn btn-secondary add-to-cart-btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Add</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="glass-panel rec-card">
+                <div class="glass-panel rec-card" data-id="season_pass" data-name="Nexus Season Pass" data-price="159.00" data-img="../images/nexus-season-pass.jpg">
                     <img src="../images/nexus-season-pass.jpg" alt="Bundle">
                     <div class="rec-card-body">
                         <h3>Nexus Season Pass</h3>
                         <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0;">Get all current and future expansions.</p>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
                             <span style="font-weight: bold; color: var(--primary);">RM 159.00</span>
-                            <a href="cart.html" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Add</a>
+                            <button class="btn btn-secondary add-to-cart-btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Add</button>
                         </div>
                     </div>
                 </div>
@@ -168,11 +177,45 @@
         </section>
     </main>
 
+    <div id="toast" class="toast-notif">Item added to Nexus cart!</div>
+
     <footer>
         <div class="container footer-content">
             <p style="color: var(--text-muted);">&copy; 2026 DysCover Nexus.</p>
         </div>
     </footer>
     <script src="../js/main.js"></script>
+    
+    <script>
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const targetEl = this.closest('[data-id]');
+                const product = {
+                    id: targetEl.getAttribute('data-id'),
+                    name: targetEl.getAttribute('data-name'),
+                    price: parseFloat(targetEl.getAttribute('data-price')),
+                    img: targetEl.getAttribute('data-img'),
+                    quantity: 1
+                };
+
+                let cart = JSON.parse(localStorage.getItem('nexus_cart')) || [];
+                const existingIndex = cart.findIndex(item => item.id === product.id);
+
+                if (existingIndex > -1) {
+                    cart[existingIndex].quantity += 1;
+                } else {
+                    cart.push(product);
+                }
+
+                localStorage.setItem('nexus_cart', JSON.stringify(cart));
+                
+                // Trigger Toast Animation
+                const toast = document.getElementById('toast');
+                toast.innerText = `${product.name} added to cart!`;
+                toast.style.display = 'block';
+                setTimeout(() => { toast.style.display = 'none'; }, 2500);
+            });
+        });
+    </script>
 </body>
 </html>
