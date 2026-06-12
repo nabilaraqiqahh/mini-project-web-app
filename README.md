@@ -12,7 +12,7 @@ This project is a web application designed as an e-commerce platform for "DysCov
 | **Member 2** | Muna | Authentication Developer | Login, register, session, validation |
 | **Member 3** | Carine | Product & Database Developer | Product page, database tables, product CRUD |
 | **Member 4** | Yuni | Shopping Cart & Checkout Developer | Cart system, checkout page, order flow |
-| **Member 5** | Danial | Multimedia & Documentation | Images/videos, presentation slides, report, testing |
+| **Member 5** | Daniel | Multimedia & Documentation | Images/videos, presentation slides, report, testing |
 
 ### Project Structure
 - `index.html`: Main Landing Page
