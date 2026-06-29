@@ -36,24 +36,8 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="container nav-container">
-            <a href="../index.html" class="logo">
-                <i class="fa-solid fa-gamepad"></i> <span>DYSCOVER</span> NEXUS
-            </a>
-            <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
-            <nav class="nav-links">
-                <a href="../index.html">Home</a>
-                <a href="about.html" style="color: var(--primary);">About Game</a>
-                <a href="product.html">Store</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-            <div class="nav-actions">
-                <a href="login.html" class="btn btn-secondary">Login</a>
-                <a href="cart.html" class="btn btn-secondary"><i class="fa-solid fa-cart-shopping"></i></a>
-            </div>
-        </div>
-    </header>
+    
+    <?php include '../includes/header.php'; ?>
 
     <main>
         <section class="about-hero container">
@@ -101,14 +85,7 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="logo" style="justify-content: center;">
-                <i class="fa-solid fa-gamepad"></i> <span>DYSCOVER</span> NEXUS
-            </div>
-            <p style="color: var(--text-muted);">&copy; 2026 DysCover Nexus. Academic Project.</p>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
     <script src="../js/main.js"></script>
 </body>

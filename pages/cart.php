@@ -28,6 +28,8 @@
         }
         .cart-item img {
             width: 120px;
+            height: 80px;
+            object-fit: cover;
             border-radius: 8px;
         }
         .item-details {
@@ -91,23 +93,15 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="container nav-container">
-            <a href="../index.html" class="logo">
-                <i class="fa-solid fa-gamepad"></i> <span>DYSCOVER</span> NEXUS
-            </a>
-            <nav class="nav-links">
-                <a href="../index.html">Home</a>
-                <a href="product.html">Continue Shopping</a>
-            </nav>
-        </div>
-    </header>
+    
+    <?php include '../includes/header.php'; ?>
 
     <main class="container">
         <h2 class="gradient-text" style="margin-top: 3rem;">Your Nexus Cart</h2>
         <div class="cart-container">
             <div class="glass-panel cart-items" id="cartItemsList">
-                </div>
+                <!-- Javascript will load products dynamically here -->
+            </div>
 
             <div class="glass-panel cart-summary">
                 <h3 style="margin-bottom: 2rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 1rem;">Order Summary</h3>
@@ -131,16 +125,12 @@
                     <span>Total</span>
                     <span style="color: var(--primary);" id="totalVal">RM 0.00</span>
                 </div>
-                <a href="checkout.html" class="btn btn-primary" style="width: 100%; margin-top: 2rem; text-align: center;">Secure Checkout <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="checkout.php" class="btn btn-primary" style="width: 100%; margin-top: 2rem; text-align: center;">Secure Checkout <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </main>
 
-    <footer>
-        <div class="container footer-content">
-            <p style="color: var(--text-muted);">&copy; 2026 DysCover Nexus.</p>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
     <script>
         function renderCart() {
@@ -196,9 +186,9 @@
 
         function removeItem(index) {
             let cart = JSON.parse(localStorage.getItem('nexus_cart')) || [];
-            cart.splice(index, 1); // Deletes selection directly out of array
+            cart.splice(index, 1);
             localStorage.setItem('nexus_cart', JSON.stringify(cart));
-            renderCart(); // Reload UI instantaneously
+            renderCart();
         }
 
         function updateSummary(subtotal) {
@@ -210,8 +200,8 @@
             document.getElementById('totalVal').innerText = `RM ${total.toFixed(2)}`;
         }
 
-        // Initialize display upon file read
         document.addEventListener('DOMContentLoaded', renderCart);
     </script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

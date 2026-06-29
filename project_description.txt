@@ -1,0 +1,147 @@
+FAKULTI TEKNOLOGI MAKLUMAT DAN KOMUNIKASI  UNIVERSITI TEKNIKAL MALAYSIA MELAKA 
+ 
+     
+ 
+BITM 2113 (WEB APPLICATION DEVELOPMENT) 
+ 
+ 
+MINI PROJECT: WEB APPLICATION DEVELOPMENT 
+ 
+1.0 Introduction
+This mini project provides students with an opportunity to build a web application.
+The following are 4 mini project titles for you to choose. Remember that you are welcome to build with the technologies of your choice, across any areas that you think would drive impact for the project, so feel free to think outside the box too!
+The following are 4 mini project titles that you can choose from:
+Project 1A: Restaurant Order Management System for Walk-In and Online Customers
+Objective:Develop a fully functional order management system that handles orders from both walk-in customers and online customers. The system should ensure smooth and efficient order processing, from order placement to order status updates.
+Resources:
+ https://drive.google.com/drive/folders/1u6Bk-_hRDnWnTyu1bw6VgqJ2aYcYH3NI?usp=drive_link
+Project Requirements:
+Walk-In Orders:
+QR Code Ordering for Customers: Implement a QR code on each table that customers can scan to view the menu and place their orders directly through the web application.
+Waiter-Assisted Ordering: Allow waiters to scan a QR code to place an order for customers, inputting order details into the system on behalf of the customer.
+Order Tracking: Once an order is placed, track its status in real-time (e.g., Pending, In Progress, Ready).
+Online Orders:
+Online Ordering Interface: Create a user-friendly web interface where online customers can browse the menu, add items to the shopping cart, and place an order.
+Checkout Process: Implement a checkout process that includes fields for customer name, shipping address (if applicable), and payment information.
+Order Confirmation: After placing the order, customers should receive an order confirmation email with details of the order (items, total, and status).
+Order Management for Restaurant Staff: Allow restaurant staff to view and update the status of walk-in and online orders. Staff should be able to mark orders as completed and notify the kitchen and waiters for pickup.
+Technologies:
+Frontend: HTML, CSS, JavaScript.
+Backend: PHP and MySQL (or Laravel if preferred).
+Implement payment functionality for online orders (e.g. upload payment receipt). 
+Collaboration:
+Work in a group of 4 students.
+Distribute tasks such as front-end development, multimedia integration, content creation, and design among group members.
+Project 1B: Order Management System for GRAB or Food Panda Runner Orders
+Objective:Create a system for managing orders that are assigned to GRAB or Food Panda runners for delivery. This system will allow restaurant staff to manage delivery assignments, track the status of each delivery, and provide relevant details to the delivery drivers.
+Resources:
+ https://drive.google.com/drive/folders/1u6Bk-_hRDnWnTyu1bw6VgqJ2aYcYH3NI?usp=drive_link
+Project Requirements:
+Minimal Functional Requirements:
+Member Registration Page (e.g. Membership information) 
+Authentication (e.g. Login-password page, session/cookies) 
+Member Area (View, Add, Update, Delete)
+Form Validation using JavaScript
+Formatting display using CSS
+Order Assignment to Runners:
+Order Assignment Interface: When a customer places an online order or walk-in order that requires delivery, the system should allow restaurant staff to assign the order to a GRAB or Food Panda runner.
+Order Details for Delivery: The order details (e.g., customer name, order items, delivery address) should be displayed to the runner through a separate interface.
+Tracking Delivery Status:
+Delivery Status Updates: Allow GRAB or Food Panda runners to update the status of the delivery in real-time (e.g., Picked up, In Transit, Delivered).
+Notifications: Notify restaurant staff when the order has been picked up by the runner and when it is delivered to the customer.
+Technologies:
+Frontend: HTML, CSS, JavaScript.
+Backend: PHP and MySQL (or Laravel if preferred).
+Collaboration:
+Work in a group of 4 students.
+Distribute tasks such as front-end development, multimedia integration, content creation, and design among group members.
+Project 2A: Promoting and Marketing a 3D Game Product
+Objective:Develop the promotional and marketing components of the web application to effectively showcase the "Gamified Dyscalculia Screening" product. This includes creating engaging multimedia content and ensuring the website provides an informative and visually appealing experience for potential customers.
+Resources:
+https://drive.google.com/drive/folders/1xoLtFR0bvFdvWrmlWJrDar5hHaYLDmSi?usp=sharing
+Project Requirements:
+Minimal Functional Requirements:
+Member Registration Page (e.g. Membership information) 
+Authentication (e.g. Login-password page, session/cookies) 
+Member Area (View, Add, Update, Delete)
+Form Validation using JavaScript
+Formatting display using CSS
+Product Marketing Information:
+Provide detailed information about the product, its benefits, and how it works.
+Highlight key features such as its educational value and the use of Petri Net-driven mechanics in the 3D learning experience.
+Showcase testimonials, case studies, and research backing to demonstrate the effectiveness of the product.
+Multimedia Integration:
+AI-Powered 3D Animations: Use AI-powered 3D animation generators to create visually appealing content that illustrates the product's learning experience.
+AI-Powered Images & Videos: Integrate AI-powered image and video generators to enhance the visual appeal of the website.
+Optimized Experience: Ensure that multimedia elements are optimized for smooth performance across different devices (desktop, mobile, tablet).
+Design & User Experience:
+Create a visually attractive and easy-to-navigate layout that highlights the product's educational benefits and encourages user engagement.
+Ensure the website is accessible, and mobile-responsive.
+Technologies:
+Frontend: HTML, CSS, JavaScript.
+Multimedia Tools: Implement AI-powered tools for generating 3D animations, images, and videos.
+Web Design Best Practices: Ensure best practices for web design, focusing on creating a compelling and informative marketing page.
+Collaboration:
+Work in a group of 4 students.
+Distribute tasks such as front-end development, multimedia integration, content creation, and design among group members.
+Project 2B:  Development of an e-Commerce web application for a 3D Game Product
+Objective:Develop the e-commerce functionality of the web application that allows users to purchase the " DysCover: A Gamified Dyscalculia Screening Game" product online. The goal is to create a smooth purchasing process for users while integrating the necessary back-end systems for order management.
+Resources:
+https://drive.google.com/drive/folders/1xoLtFR0bvFdvWrmlWJrDar5hHaYLDmSi?usp=sharing
+Project Requirements:
+Minimal Functional Requirements:
+Member Registration Page (e.g. Membership information) 
+Authentication (e.g. Login-password page, session/cookies) 
+Member Area (View, Add, Update, Delete)
+Form Validation using JavaScript
+Formatting display using CSS
+Product Information:
+Include comprehensive details about the "Gamified Dyscalculia Screening" product.
+Highlight its key features, benefits, and educational value.
+Explain how the product works, particularly the use of Petri Net-driven mechanics in the 3D learning experience.
+Showcase testimonials and case studies demonstrating the effectiveness of the product.
+Include research backing and scientific support for the technology and methodology.
+E-commerce Functionality:
+Product Purchase:
+Allow users to add the product to a shopping cart and proceed to checkout.
+Ensure the checkout process collects necessary details such as name, shipping address, and payment information.
+Integrate a payment functionality to handle transactions.
+Order Confirmation:
+Once the purchase is completed, users should receive an order confirmation with details of their purchase (e.g., product name, quantity, price, shipping address).
+Send an email confirmation to the user upon successful payment.
+Technologies:
+Frontend: HTML, CSS, JavaScript
+Backend: PHP and MySQL (or Laravel if preferred)
+Database Management: Implement efficient database management for user orders.
+5.   Design & User Experience:
+Create a simple checkout process.
+Ensure that the shopping cart and checkout experience is easy to use and visually appealing.
+Focus on a professional, clean design aligned with the educational purpose of the product.
+6.   Collaboration:
+Work in a group of 4 students.
+Distribute tasks such as front-end development, multimedia integration, content creation, and design among group members.
+General Instructions:
+a) This is a group project. Each project will develop a web application system based on the topic. At the end of the semester, you will demonstrate your project to the class. Your web application functionality and usability, and coding style, all contribute to the grade of your group project.
+b) Upload your web application onto your UTeM Web server applied earlier, or my Web server at https://smartgreen.my/cpanel. Username and password will be given by request. A manual also will be provided for uploading your project.
+c) Presentation
+•       Each group will present a 15 minutes’ report on the project and demonstration of the project.
+•       The following are topics should be included in your presentation:
+A brief description of the project ( Introduction, Problem Statement, Importance of the project, Roles of each member)
+Functions available in the system (with print screens)
+Conclusion
+Project demonstration
+d) Project Schedule 
+Each group is encouraged to complete the following tasks at the specified date. This will help the group to complete the project on time and fulfil the stated specifications. 
+Date 
+Task 
+Week 8 - 12 
+Client-side scripting (design web page, add graphics and links, form validation, etc.) 
+Web server installation and database configuration 
+(Assignment 2 – 8%) 
+- Please use Assignment 2 guideline - 
+Week 10 - 13 
+Server-side scripting (PHP & MySQL) – Functions 
+Week 14 
+Implementation and testing 
+Week 15 
+Presentation  

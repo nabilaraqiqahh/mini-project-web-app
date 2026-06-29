@@ -1,3 +1,24 @@
+<?php
+require_once __DIR__ . '/includes/db.php';
+
+// Fetch recent testimonials from database
+$query = "SELECT r.comment, u.fullname FROM reviews r JOIN users u ON r.user_id = u.user_id ORDER BY r.created_at DESC LIMIT 3";
+$result = mysqli_query($conn, $query);
+
+$testimonials = [];
+if ($result && mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $testimonials[] = $row;
+    }
+} else {
+    // Default testimonials if db reviews table is empty
+    $testimonials = [
+        ['comment' => "My son used to cry when doing math homework. Now he asks to play DysCover Nexus every day!", 'fullname' => "Sarah M."],
+        ['comment' => "The visual representation of numbers in the 3D space finally made things click for my daughter.", 'fullname' => "David K."],
+        ['comment' => "A perfect blend of engaging gameplay and solid educational foundation. Highly recommended.", 'fullname' => "Elena R."]
+    ];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,24 +101,7 @@
 </head>
 <body>
 
-    <header>
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <i class="fa-solid fa-gamepad"></i> <span>DYSCOVER</span> NEXUS
-            </a>
-            <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="pages/about.html">About Game</a>
-                <a href="pages/product.html">Store</a>
-                <a href="pages/contact.html">Contact</a>
-            </nav>
-            <div class="nav-actions">
-                <a href="pages/login.html" class="btn btn-secondary">Login</a>
-                <a href="pages/register.html" class="btn btn-primary">Sign Up</a>
-            </div>
-        </div>
-    </header>
+    <?php include 'includes/header.php'; ?>
 
     <main>
         <!-- Hero Section -->
@@ -106,8 +110,8 @@
                 <h1 class="gradient-text">Play Smarter, Learn Better</h1>
                 <p>Unlock the power of numbers through immersive 3D gaming. Designed specifically for children with dyscalculia learning challenges.</p>
                 <div>
-                    <a href="pages/product.html" class="btn btn-primary" style="margin-right: 1rem;">Explore Game</a>
-                    <a href="pages/about.html" class="btn btn-secondary">How it Works</a>
+                    <a href="pages/product.php" class="btn btn-primary" style="margin-right: 1rem;">Explore Game</a>
+                    <a href="pages/about.php" class="btn btn-secondary">How it Works</a>
                 </div>
                 
                 <div class="hero-banner">
@@ -146,45 +150,26 @@
                         <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Visual-spatial learning mechanics</li>
                         <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Progress tracking for parents</li>
                     </ul>
-                    <a href="pages/product.html" class="btn btn-primary">View in Store</a>
+                    <a href="pages/product.php" class="btn btn-primary">View in Store</a>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials -->
+        <!-- Testimonials (Dynamic reviews from database) -->
         <section class="container section-padding">
             <h2 class="text-center gradient-text" style="margin-bottom: 3rem;">What Parents Say</h2>
             <div class="grid-3">
-                <div class="glass-panel" style="padding: 2rem;">
-                    <p style="font-style: italic; margin-bottom: 1rem;">"My son used to cry when doing math homework. Now he asks to play DysCover Nexus every day!"</p>
-                    <h4 style="color: var(--primary);">- Sarah M.</h4>
-                </div>
-                <div class="glass-panel" style="padding: 2rem;">
-                    <p style="font-style: italic; margin-bottom: 1rem;">"The visual representation of numbers in the 3D space finally made things click for my daughter."</p>
-                    <h4 style="color: var(--primary);">- David K.</h4>
-                </div>
-                <div class="glass-panel" style="padding: 2rem;">
-                    <p style="font-style: italic; margin-bottom: 1rem;">"A perfect blend of engaging gameplay and solid educational foundation. Highly recommended."</p>
-                    <h4 style="color: var(--primary);">- Elena R.</h4>
-                </div>
+                <?php foreach ($testimonials as $t): ?>
+                    <div class="glass-panel" style="padding: 2rem;">
+                        <p style="font-style: italic; margin-bottom: 1rem;">"<?php echo htmlspecialchars($t['comment']); ?>"</p>
+                        <h4 style="color: var(--primary);">- <?php echo htmlspecialchars($t['fullname']); ?></h4>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="logo" style="justify-content: center;">
-                <i class="fa-solid fa-gamepad"></i> <span>DYSCOVER</span> NEXUS
-            </div>
-            <p style="color: var(--text-muted);">Empowering learners through futuristic gamification.</p>
-            <div class="social-links">
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-discord"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-            <p style="font-size: 0.8rem; margin-top: 2rem; color: var(--text-muted);">&copy; 2026 DysCover Nexus. Academic Project.</p>
-        </div>
-    </footer>
+    <?php include 'includes/footer.php'; ?>
 
     <script src="js/main.js"></script>
 </body>

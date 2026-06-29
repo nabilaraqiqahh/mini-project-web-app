@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
             let isValid = true;
             
             const email = document.getElementById('email');
@@ -51,9 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearError(password);
             }
 
-            if (isValid) {
-                alert('Login successful! (Simulation)');
-                window.location.href = '../index.html';
+            if (!isValid) {
+                e.preventDefault();
             }
         });
     }
@@ -75,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         registerForm.addEventListener('submit', (e) => {
-            e.preventDefault();
             let isValid = true;
             
             const username = document.getElementById('username');
@@ -103,9 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 isValid = false;
             } else clearError(confirmPassword);
 
-            if (isValid) {
-                alert('Registration successful! (Simulation)');
-                window.location.href = 'login.html';
+            if (!isValid) {
+                e.preventDefault();
             }
         });
     }

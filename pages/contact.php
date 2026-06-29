@@ -59,20 +59,8 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="container nav-container">
-            <a href="../index.html" class="logo">
-                <i class="fa-solid fa-gamepad"></i> <span>DYSCOVER</span> NEXUS
-            </a>
-            <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
-            <nav class="nav-links">
-                <a href="../index.html">Home</a>
-                <a href="about.html">About Game</a>
-                <a href="product.html">Store</a>
-                <a href="contact.html" style="color: var(--primary);">Contact</a>
-            </nav>
-        </div>
-    </header>
+    
+    <?php include '../includes/header.php'; ?>
 
     <main class="container">
         <div class="glass-panel contact-container">
@@ -133,6 +121,8 @@
             </div>
         </div>
     </main>
+
+    <?php include '../includes/footer.php'; ?>
 
     <script src="../js/main.js"></script>
     <script src="../js/validation.js"></script>
